@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Algoritmo 46</title>
+  <style>
+    body{ 
+        height: 100%;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Algoritmo 46</h1>
+  <p></p>
+  <style>
+    body{
+        text-align: center;
+        color: rgb(31, 244, 42);
+        background-image: url("img/gifimg.gif");
+        font-size: 30px;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';
+        line-height: 1.5;
+    }
+    button:hover {
+    background-color: #be0dff;
+    color: rgb(235, 255, 14);
+    }
+    button{
+      /* display: inline-block;: utilizei para controlar a altura e largura do botão*/
+      /* padding: utilizei para controlar o espaçamento dentro do botâo */
+      /* border none: utilizei para remover a borda do elemento */
+      /* border-radius: utilizei para arredondar as bordas do elemento em 5px */
+      /* cursor:pointer: Utilzei para que quando o usuário passar o cursor encima do botão ficar visíivel que*/
+      display: inline-block;   
+      padding: 10px 20px;
+      background-color: #33485e;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+      text-align: center;
+    }
+    label for{
+      display:ruby-text-container
+    }
+      input{
+        font-size: 20px;
+      }
+  </style>
+   <!-- Pede ao usúario para que Insira seu Salário -->
+  <label for="salario">Digite seu Salário anual:</label>
+  <input type="number" id="salario" placeholder="Insira um Valor:"><br>
+  <!-- Pede ao usuário que Insira o piso salarial -->
+  <label for="piso">Digite o piso Salarial Mensal:</label>
+  <input type="number" id="piso" placeholder="Insira um Valor:"><br><br>
+
+  <button onclick="verificarSalario()">Verificar</button>
+  <a href="index2.html"><button>Pseudo Javascript</button></a> 
+
+  <p id="resultado"></p>
+  <script>
+   function verificarSalario() {
+  // Obtém os valores dos inputs e converte para número
+  var salario = parseFloat(document.getElementById("salario").value);
+  var piso = parseFloat(document.getElementById("piso").value);
+
+  var resultado = document.getElementById("resultado");
+  // (!salario || !piso)  verifica se a variável salario ou a variável piso é falsa, ou seja, se não possui um valor atribuído ou se é considerado um valor falso (como null, undefined, false, 0, ou uma string vazia '').
+  if (!salario || !piso) {
+    alert("Por favor, insira um valor válido para o salário e o piso salarial!");
+    //Exibe um alerta se nenhum valor for colocado
+  } else if (salario > piso) {
+    resultado.textContent = "O seu salário esta acima Do piso salarial Mensal. Seu salário é de: R$" + salario;
+    //Se o salário for maior que o piso, exibe uma mensagem que diz o 
+  } else if (salario < piso) {
+    resultado.textContent = "O seu salário está abaixo do piso salarial mensal. Seu salário é de: R$" + salario;
+    //Se o salário for menor que o piso salarial ele exibe essa mensagem e diz o seu salário
+  } else if (salario==piso)
+    resultado.textContent = "O seu salário é igual ao piso salarial Mensal. Seu salário é de: R$ " + salario;
+    //Se o salário for igual ao piso salarial ele exibe essa mensagem e o salário
+   }
+  </script>
+  <!-- img src serve para adicionar imagens na página, sem ser no fundo -->
+  <img src="Visualg.png" alt="">   
+  <img src="Result Visualg.png" alt="">
+  
+  
+</body>
+</html>

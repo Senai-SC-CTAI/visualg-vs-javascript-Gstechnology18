@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Algoritmo 46</title>
+  <style>
+    body{ 
+        height: 100%;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Algoritmo 46</h1>
+  <style>
+    body{
+        text-align: center;
+        color: rgb(31, 244, 42);
+        background-image: url("img/gifimg.gif");
+        font-size: 16px;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        line-height: 1.5;
+    }
+    button:hover {
+    background-color: #be0dff;
+    color: rgb(235, 255, 14);
+    }
+    button{
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #33485e;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+      text-align: center;
+    }
+  </style>
+   <!-- Pede ao usúario para que Insira seu Salário -->
+  <label for="salario">Digite seu Salário anual:</label>
+  <input type="number" id="salario"><br>
+  <!-- Pede ao usuário que Insira o piso salarial -->
+  <label for="piso">Digite o piso salarial:</label>
+  <input type="number" id="piso"><br><br>
+
+  <button onclick="verificarSalario()">Verificar</button>
+
+  <p id="resultado"></p>
+  <script>
+   function verificarSalario() {
+  // Obtém os valores dos inputs e converte para número
+  var salario = parseFloat(document.getElementById("salario").value);
+  var piso = parseFloat(document.getElementById("piso").value);
+
+  var resultado = document.getElementById("resultado");
+  
+  if (!salario || !piso) {
+    alert("Por favor, insira um valor válido para o salário e o piso salarial!");
+    //Exibe um alerta se nenhum valor for colocado
+  } else if (salario > piso) {
+    resultado.textContent = "O seu salário é maior que o piso salarial. Seu salário é de: R$" + salario;
+    //Se o salário for maior que o piso, exibe uma mensagem que diz o 
+  } else if (salario < piso) {
+    resultado.textContent = "O seu salário é menor que o piso salarial. Seu salário é de: R$" + salario;
+    //Se o salário for menor que o piso salarial ele exibe essa mensagem e diz o seu salário
+  } else if (salario==piso)
+    resultado.textContent = "O seu salário é igual ao piso salarial. Seu salário é de: R$ " + salario;
+    //Se o salário for igual ao piso salarial ele exibe essa mensagem e o salário
+   }
+  </script>
+  <!-- img src serve para adicionar imagens na página, sem ser no fundo -->
+  <img src="Visualg.png" alt="">   
+  <img src="Result Visualg.png" alt="">
+  <img src="Scriptjs.png" alt="">
+  
+</body>
+</html>
